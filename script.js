@@ -6,7 +6,7 @@ const challenges = [
   {id:'A5',m:'alpha',title:'Send a private message',desc:'Priya needs to send Ravi a message that Ravi can read, but strangers cannot.',q:'Should Priya use encryption or hashing?',a:['encryption','encrypt'],h:'Ravi needs to recover the original message.'},
   {id:'A6',m:'alpha',title:'Name the safe hash',desc:'MD5 is old and unsafe for security. SHA-256 is a modern hash taught in this lab.',q:'Which is safer for integrity: MD5 or SHA-256?',a:['sha-256','sha256','sha 256'],h:'Choose the answer with 256 in its name.'},
   {id:'B1',m:'bravo',title:'Caesar warms up',desc:'A Caesar cipher shifts every letter by the same amount. Shift each letter in KHOOR backward by 3.',q:'Decrypt KHOOR.',a:['hello'],h:'K→H, H→E, O→L.'},
-  {id:'B2',m:'bravo',title:'Shift by one',desc:'This message was encrypted by moving each letter one step forward in the alphabet.',q:'Decrypt DZUFS.',a:['cyber'],h:'Move D back to C, Z back to Y…'},
+  {id:'B2',m:'bravo',title:'Shift by one',desc:'This message was encrypted by moving each letter one step forward in the alphabet.',q:'Decrypt DZCFS.',a:['cyber'],h:'Move D back to C, Z back to Y…'},
   {id:'B3',m:'bravo',title:'The number line',desc:'Use A=1, B=2, C=3 … Z=26. Separate numbers are separate letters.',q:'Decode 8-1-19-8.',a:['hash'],h:'8=H and 1=A.'},
   {id:'B4',m:'bravo',title:'Read in the mirror',desc:'A reverse cipher simply writes the whole message backward.',q:'Decrypt NOITPYRCNE.',a:['encryption'],h:'Read the letters from right to left.'},
   {id:'B5',m:'bravo',title:'ROT13 patrol',desc:'ROT13 shifts letters by 13. Applying ROT13 twice restores the original.',q:'Decode FRPERG using ROT13.',a:['secret'],h:'F→S, R→E, P→C.'},
