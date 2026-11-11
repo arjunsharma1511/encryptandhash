@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A beginner-friendly classroom CTF about encryption and hashing.">
+  <meta name="theme-color" content="#07111f">
+  <title>Hash &amp; Cipher Lab — Beginner CTF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mission">Skip to challenges</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Hash and Cipher Lab home"><span aria-hidden="true">H//C</span> HASH &amp; CIPHER LAB</a>
+    <div class="status-strip" aria-label="CTF status">
+      <span><i class="status-dot"></i> LAB ONLINE</span>
+      <span id="progressText">0 / 24 FLAGS</span>
+      <button class="timer-button" id="timerButton" type="button" aria-label="Start 75 minute timer"><span id="timer">75:00</span> <small id="timerLabel">START</small></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">BEGINNER CLASSROOM MISSION // 60–90 MINUTES</p>
+        <h1 id="hero-title">Secrets can be <em>unlocked.</em><br>Fingerprints cannot.</h1>
+        <p class="lede">Learn the difference between encryption and hashing by solving 24 small, friendly challenges. No cybersecurity experience needed.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#briefing">Read the briefing <span aria-hidden="true">↓</span></a>
+          <button class="button ghost" id="resetButton" type="button">Reset progress</button>
+        </div>
+        <div class="quick-facts" aria-label="Activity details">
+          <div><strong>24</strong><span>CHALLENGES</span></div>
+          <div><strong>4</strong><span>MISSIONS</span></div>
+          <div><strong>75m</strong><span>SUGGESTED</span></div>
+          <div><strong>0</strong><span>INSTALLS</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="core"><span>LOCK</span><b>≠</b><span>PRINT</span></div>
+        <div class="data-tag tag-a">01001000</div><div class="data-tag tag-b">SHA-256</div><div class="data-tag tag-c">KEY_07</div>
+      </div>
+    </section>
+
+    <section class="briefing section" id="briefing" aria-labelledby="briefing-title">
+      <div class="section-heading">
+        <p class="eyebrow">00 // MISSION BRIEFING</p>
+        <h2 id="briefing-title">One difference. Learn it well.</h2>
+      </div>
+      <div class="comparison-grid">
+        <article class="concept-card encryption-card">
+          <div class="card-number">01</div>
+          <p class="card-label">ENCRYPTION</p>
+          <h3>A locked box</h3>
+          <p>Encryption changes readable data into unreadable ciphertext. With the correct <strong>key</strong>, it can be changed back.</p>
+          <div class="flow"><code>HELLO</code><span>+ KEY →</span><code>KHOOR</code><span>+ KEY →</span><code>HELLO</code></div>
+          <ul>
+            <li><b>Reversible:</b> yes, with the key</li>
+            <li><b>Purpose:</b> keep information secret</li>
+            <li><b>Examples:</b> AES, RSA, Caesar cipher</li>
+          </ul>
+        </article>
+        <div class="versus" aria-hidden="true">VS</div>
+        <article class="concept-card hashing-card">
+          <div class="card-number">02</div>
+          <p class="card-label">HASHING</p>
+          <h3>A digital fingerprint</h3>
+          <p>Hashing turns data into a fixed-size fingerprint. It is designed to be <strong>one-way</strong>; there is no key to turn it back.</p>
+          <div class="flow"><code>HELLO</code><span>→</span><code class="long-code">3733cd…</code><span>↛</span><code>HELLO</code></div>
+          <ul>
+            <li><b>Reversible:</b> no</li>
+            <li><b>Purpose:</b> check integrity or passwords</li>
+            <li><b>Examples:</b> SHA-256, SHA-3 (MD5 is unsafe)</li>
+          </ul>
+        </article>
+      </div>
+      <aside class="golden-rule"><span aria-hidden="true">!</span><p><strong>THE GOLDEN RULE</strong>If you need the original data back, use encryption. If you only need to check whether data matches, use hashing.</p></aside>
+    </section>
+
+    <section class="howto section" aria-labelledby="howto-title">
+      <div class="section-heading compact"><p class="eyebrow">01 // FIELD MANUAL</p><h2 id="howto-title">How to play</h2></div>
+      <div class="steps">
+        <article><span>01</span><h3>Read</h3><p>Every card teaches one tiny idea. Read the mission note before guessing.</p></article>
+        <article><span>02</span><h3>Solve</h3><p>Type the answer. Capital letters do not matter; spaces around answers are ignored.</p></article>
+        <article><span>03</span><h3>Ask for intel</h3><p>Use a hint if stuck. Hints make the lesson easier and do not reduce your score.</p></article>
+        <article><span>04</span><h3>Capture</h3><p>A correct answer captures a flag. Reach 24 flags to complete the lab.</p></article>
+      </div>
+      <div class="rules"><b>RULES OF ENGAGEMENT</b><span>Work alone or in pairs</span><span>Use paper for shifts</span><span>No special tools required</span><span>Finish all four missions</span></div>
+    </section>
+
+    <section class="mission-area section" id="mission" aria-labelledby="challenge-title">
+      <div class="section-heading">
+        <p class="eyebrow">02 // ACTIVE OPERATION</p>
+        <h2 id="challenge-title">Capture all 24 flags.</h2>
+        <p>Move in order: identify, decrypt, verify, then investigate.</p>
+      </div>
+      <nav class="mission-tabs" aria-label="Mission filters">
+        <button class="tab active" data-filter="all" type="button">All <span>24</span></button>
+        <button class="tab" data-filter="alpha" type="button">A · Spot the difference <span>6</span></button>
+        <button class="tab" data-filter="bravo" type="button">B · Crack ciphers <span>7</span></button>
+        <button class="tab" data-filter="charlie" type="button">C · Hash detective <span>6</span></button>
+        <button class="tab" data-filter="delta" type="button">D · Final case <span>5</span></button>
+      </nav>
+      <div id="challengeGrid" class="challenge-grid"></div>
+    </section>
+
+    <section class="finish-panel section" id="finishPanel" aria-live="polite">
+      <p class="eyebrow">MISSION STATUS</p>
+      <h2 id="finishTitle">24 flags remain.</h2>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <p id="finishMessage">Start with Mission A. Every correct answer moves the bar.</p>
+      <button class="button primary" id="certificateButton" type="button" disabled>Print completion certificate</button>
+    </section>
+  </main>
+
+  <footer><span>HASH &amp; CIPHER LAB // CLASSROOM EDITION</span><span>Progress stays on this device · No data is sent anywhere</span></footer>
+
+  <dialog id="certificateDialog">
+    <form method="dialog" class="certificate-form">
+      <button class="dialog-close" value="close" aria-label="Close">×</button>
+      <p class="eyebrow">OPERATION COMPLETE</p>
+      <h2>Certificate of Completion</h2>
+      <p>This certifies that</p>
+      <label><span class="sr-only">Student name</span><input id="studentName" placeholder="type your name" autocomplete="name"></label>
+      <p>captured all 24 flags and can explain the difference between encryption and hashing.</p>
+      <div class="certificate-seal">H//C<br><small>24/24</small></div>
+      <p class="certificate-date" id="certificateDate"></p>
+      <button class="button primary" type="button" id="printButton">Print / Save PDF</button>
+    </form>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
